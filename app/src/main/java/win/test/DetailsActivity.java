@@ -5,7 +5,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -37,7 +36,7 @@ public class DetailsActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.button);
 
 
-        title.setText("教师详情");
+        title.setText("事项详情");
 
         isYue = DbService.queryRecord(model.name,App.userId);
 

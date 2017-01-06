@@ -5,12 +5,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import win.test.App;
+
 /**
  * Created by win on 2016/12/21.
  */
 
 public class DbService {
-
 
 
     /**
@@ -19,14 +23,14 @@ public class DbService {
      * @param userId
      * @param password
      */
-    public static void addUser(String userId, String password ) {
+    public static void addUser(String userId, String password) {
         Db db = Db.getInstance();
         SQLiteDatabase dbWrite = db.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("password", password);
         cv.put("userId", userId);
 
-        dbWrite.execSQL("DELETE FROM user WHERE userId=?", new String[]{ userId});
+        dbWrite.execSQL("DELETE FROM user WHERE userId=?", new String[]{userId});
 
         dbWrite.insert("user", null, cv);
         dbWrite.close();
@@ -34,6 +38,7 @@ public class DbService {
 
     /**
      * 查询   用户密码
+     *
      * @param userId
      */
     public static String queryPassword(String userId) {
@@ -49,9 +54,6 @@ public class DbService {
         db.close();
         return password;
     }
-
-
-
 
 
     /**
@@ -74,15 +76,15 @@ public class DbService {
     }
 
 
-
     /**
      * 查询单条记录
+     *
      * @param name
      */
-    public static String queryRecord(String name,String userId) {
+    public static String queryRecord(String name, String userId) {
         Db db = Db.getInstance();
         SQLiteDatabase dbRead = db.getReadableDatabase();
-        Cursor cursor = dbRead.query("record", null, "name=? AND userId=?", new String[]{name,userId}, null, null, null);
+        Cursor cursor = dbRead.query("record", null, "name=? AND userId=?", new String[]{name, userId}, null, null, null);
 
         String isYue = null;
         while (cursor.moveToNext()) {
@@ -97,12 +99,27 @@ public class DbService {
     /**
      * 查询全部记录
      */
-    public static void queryWholeRecord() {
+    public static List<String> queryWholeRecord() {
         Db db = Db.getInstance();
         SQLiteDatabase dbRead = db.getReadableDatabase();
 
+        List<String> list = new ArrayList<>();
 
-        dbRead.query("record", null, null, null, null, null, null);
+        Cursor cursor = dbRead.query("record", null, null, null, null, null, null);
+
+        while (cursor.moveToNext()) {
+
+            String userId = cursor.getString(1);
+            String name = cursor.getString(2);
+            String isyue = cursor.getString(3);
+
+            if (App.userId.equals(userId) && isyue != null) {
+                list.add(name);
+            }
+
+        }
+
+        return list;
     }
 
 

@@ -55,7 +55,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="8dp"
-                android:text="老师姓名"
+                android:text="事项名称"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -81,7 +81,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="8dp"
-                android:text="老师简介"
+                android:text="事项内容"
                 android:textSize="16sp" />
         </LinearLayout>
 

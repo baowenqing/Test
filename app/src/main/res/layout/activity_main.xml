@@ -28,18 +28,18 @@
                 android:id="@+id/java"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="java"
-                android:textColor="@color/white"
                 android:gravity="center"
+                android:text="上午"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
         </android.support.v7.widget.CardView>
 
 
         <android.support.v7.widget.CardView
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             app:cardBackgroundColor="@color/blue"
             app:cardCornerRadius="10dp"
             app:cardElevation="2dp">
@@ -48,17 +48,17 @@
                 android:id="@+id/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="android"
-                android:textColor="@color/white"
                 android:gravity="center"
+                android:text="中午"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:layout_marginTop="30dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="20dp"
             app:cardBackgroundColor="@color/blue"
             app:cardCornerRadius="10dp"
             app:cardElevation="2dp">
@@ -67,12 +67,41 @@
                 android:id="@+id/ios"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="ios"
-                android:textColor="@color/white"
                 android:gravity="center"
+                android:text="下午"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
         </android.support.v7.widget.CardView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="预约内容"
+            android:textColor="@color/blue"
+            android:textSize="22sp" />
+
+
+        <LinearLayout
+            android:id="@+id/llContains"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <ListView
+                android:id="@+id/list"
+                android:divider="@null"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp" />
+
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 </LinearLayout>

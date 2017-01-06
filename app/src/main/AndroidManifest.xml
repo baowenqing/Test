@@ -5,20 +5,16 @@
     <uses-sdk
         android:minSdkVersion="9"
         android:targetSdkVersion="17" />
-    <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
-    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@drawable/a1"
-        android:label="test"
+        android:icon="@drawable/app_icon"
+        android:label="生活小助手"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".MainActivity"
             android:launchMode="singleTask"/>
@@ -30,9 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CourseActivity" />
-        <activity android:name=".DetailsActivity" />
-        <activity android:name=".RegistActivity"></activity>
+        <activity android:name=".CourseActivity"  />
+        <activity android:name=".DetailsActivity"  />
+        <activity android:name=".RegistActivity"/>
     </application>
 
 </manifest>
