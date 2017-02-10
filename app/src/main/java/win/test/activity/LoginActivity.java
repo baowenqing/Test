@@ -1,4 +1,4 @@
-package win.test;
+package win.test.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import win.test.App;
 import win.test.DB.DbService;
+import win.test.MainActivity;
+import win.test.R;
 
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
 
     private EditText mPhone;
@@ -22,15 +25,38 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button BtnLogin,BtnRegist;
     Context mContext;
     ImageView back;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+
 
         App.userId="";
         mContext = LoginActivity.this;
         initView();
         addListener();
+    }
+
+    @Override
+    protected int getLayoutResID() {
+        return R.layout.activity_login;
+    }
+
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    protected void initEvents() {
+
+    }
+
+
+    @Override
+    protected void initDatas() {
+
     }
 
 
@@ -41,9 +67,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         back.setOnClickListener(this);
     }
 
+
+
+
     private void initView() {
-
-
         TextView title = (TextView) findViewById(R.id.title);
         title.setText("用户登录");
          back = (ImageView) findViewById(R.id.back);

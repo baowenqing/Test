@@ -1,4 +1,4 @@
-package win.test;
+package win.test.activity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,13 +10,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import win.test.App;
 import win.test.DB.DbService;
+import win.test.R;
 import win.test.custom.CircleImageView;
 import win.test.custom.sweetAlertDialog.SweetAlertDialog;
 import win.test.model.Model;
 import win.test.utils.BlurBitmapUtil;
 
-public class DetailsActivity extends AppCompatActivity {
+public class DetailsActivity extends BaseActivity {
 
 
     String isYue;
@@ -38,7 +40,7 @@ public class DetailsActivity extends AppCompatActivity {
 
         title.setText("事项详情");
 
-        isYue = DbService.queryRecord(model.name,App.userId);
+        isYue = DbService.queryRecord(model.name, App.userId);
 
 
         if (isYue != null) {
@@ -138,6 +140,26 @@ public class DetailsActivity extends AppCompatActivity {
 //
 //            }
         });
+
+    }
+
+    @Override
+    protected int getLayoutResID() {
+        return R.layout.activity_details;
+    }
+
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    protected void initEvents() {
+
+    }
+
+    @Override
+    protected void initDatas() {
 
     }
 }

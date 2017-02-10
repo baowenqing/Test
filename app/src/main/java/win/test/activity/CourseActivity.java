@@ -1,4 +1,4 @@
-package win.test;
+package win.test.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,23 +15,45 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import win.test.R;
 import win.test.custom.CircleImageView;
 import win.test.model.Model;
 
-public class CourseActivity extends AppCompatActivity {
+public class CourseActivity extends BaseActivity {
 
 
     List<Model> mList;
     Context mContext;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_course);
+    protected int getLayoutResID() {
+        return R.layout.activity_course;
+    }
+
+    @Override
+    protected void initViews() {
+        TextView title = (TextView) findViewById(R.id.title);
+        title.setText("事项");
+        ImageView back = (ImageView) findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+    }
+
+    @Override
+    protected void initEvents() {
+
+    }
+
+    @Override
+    protected void initDatas() {
         mContext = CourseActivity.this;
         String type = getIntent().getStringExtra("type");
-
-
         switch (type) {
             case "0":
                 setdata("上午 ");
@@ -45,21 +67,8 @@ public class CourseActivity extends AppCompatActivity {
                 break;
         }
 
-        TextView title = (TextView) findViewById(R.id.title);
-        title.setText("事项");
-        ImageView back = (ImageView) findViewById(R.id.back);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-
         ListView listView = (ListView) findViewById(R.id.listview);
-
         listView.setAdapter(new Adapter());
-
     }
 
 
@@ -82,7 +91,6 @@ public class CourseActivity extends AppCompatActivity {
 
 
         class ViewHolder {
-
             TextView textView;
             CircleImageView imageView;
         }

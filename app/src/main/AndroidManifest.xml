@@ -18,7 +18,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".MainActivity"
             android:launchMode="singleTask"/>
-        <activity android:name=".LoginActivity"
+        <activity android:name=".activity.LoginActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,9 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CourseActivity"  />
-        <activity android:name=".DetailsActivity"  />
-        <activity android:name=".RegistActivity"/>
+        <activity android:name=".activity.CourseActivity"  />
+        <activity android:name=".activity.DetailsActivity"  />
+        <activity android:name=".activity.RegistActivity"/>
     </application>
 
 </manifest>

@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import win.test.DB.DbService;
+import win.test.activity.CourseActivity;
+import win.test.activity.DetailsActivity;
 import win.test.custom.CircleImageView;
 import win.test.model.Model;
 import win.test.utils.CommonAdapter;

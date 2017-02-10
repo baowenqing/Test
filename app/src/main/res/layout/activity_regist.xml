@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context="win.test.LoginActivity">
+    tools:context="win.test.activity.LoginActivity">
 
     <include layout="@layout/toolbar" />
 
